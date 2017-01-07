@@ -23,4 +23,3 @@ Imagine if some of theses projects were created as guides or tutorials instead. 
 ### Automate your build configuration instead
 
 [Create React App](https://github.com/facebookincubator/create-react-app "Create") is like a boilerplate for your build config, and it's great. If you're starting a new React project I highly recommend checking it out. Rather than dictate how you should build your application, it does all the heavy lifting of setting up your build config instead. It does force some restrictions in return for simplicity, but you can always eject and go your own way if need be. There are other options to choose from when it comes to build config automation, however, Create React App is the most popular and is supported by the React team. I'll be using it in part 2 when we create an actual application.
-
