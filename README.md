@@ -1,12 +1,12 @@
 # Surviving Redux
 
-While this guide focuses on Redux, it also assumes basic knowledge of React
+If you're like me, when you first started learning Redux, once you got past the initial learning curve, you had some "aha" moments where you really understood it and it felt great. You started to see your future. It's covered in reducers and there's an action for everything. At any moment you can see exactly what's happening. You can pause, rewind and replay time. You're in control. Until your app grows. Then you wonder why simple changes require so much effort. You're trying to remember why you created so many action creators, and why they exist at all. Weren't they meant to reduce boilerplate?
 
-This guide covers the basics of React as well as common techniques used in large applications. By the end, you should have the necessary knowledge to understand and use both with confidence. You should also have move confidence to understand new developments in the world of React.
+The purpose of this guide is to try and solve some of the issues I've encountered when creating applications with React and Redux. In the first part, I'll go over these issues and try to come up with solutions. In part 2 I'll create an application while following the new rules and patterns from part 1 to see if they are helping in practice. Let's see how it goes.
 
-The content is aimed at newcomers to React, and those interested in learning more about patterns used in non trivial applications. Effort is made to use concrete examples along the way to aid in understanding.
+While this guide focuses on Redux, it assumes basic knowledge of Redux and React. If you're using something other than React for your UI then you should still be able to follow along. If you are using React then it's a good idea to get a solid understanding of all the features it provides before moving on to Redux.
 
-It isn't feasible or necessary to cover every aspect of React application development here. There's plenty of tutorials and articles that cover individual topics in more depth. The aim is to explain the fundamentals and direct the reader to further resources when required.
+#### But first...
 
 ### Boilerplate projects should be studied, not copied
 
@@ -22,7 +22,5 @@ Imagine if some of theses projects were created as guides or tutorials instead. 
 
 ### Automate your build configuration instead
 
-[Create React App](https://github.com/facebookincubator/create-react-app "Create") is like a boilerplate for your build config, and it's great. If you're starting a new React project I highly recommend checking it out. Rather than dictate how you should build your application, it does all the heavy lifting of setting up your build config instead. It does force some restrictions in return for simplicity, but you can always eject and go your own way if need be. There are other options to choose from when it comes to build config automation, however, Create React App is the most popular and is supported by the React team.
-
-
+[Create React App](https://github.com/facebookincubator/create-react-app "Create") is like a boilerplate for your build config, and it's great. If you're starting a new React project I highly recommend checking it out. Rather than dictate how you should build your application, it does all the heavy lifting of setting up your build config instead. It does force some restrictions in return for simplicity, but you can always eject and go your own way if need be. There are other options to choose from when it comes to build config automation, however, Create React App is the most popular and is supported by the React team. I'll be using it in part 2 when we create an actual application.
 
