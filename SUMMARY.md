@@ -9,6 +9,7 @@
     * [All my reducers look the same](part-1/all-my-reducers-look-the-same.md)
     * [Take redux to a higher level](part-1/take-redux-to-a-higher-level.md)
     * The minimal reducer
+  * Handling side effects
   * Summing up \(Rules\)
 * [Part 2](part-2.md)
 
