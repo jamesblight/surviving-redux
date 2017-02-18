@@ -8,10 +8,9 @@ components/
 constants/
 containers/
 reducers/
-
 ```
 
-This is great for small examples and applications. The problem is, if you continue to build your application like this, you might find that it becomes unmaintainable as youl have to sift through an increasingly large number of components, containers, actions and reducers. 
+This is great for small examples and applications. The problem is, if you continue to build your application like this, you might find that it becomes unmaintainable as youl have to sift through an increasingly large number of components, containers, actions and reducers.
 
 ```
 actions/
@@ -31,7 +30,6 @@ containers/
     RegisterFormContainer/
     ...
 reducers/
-
 ```
 
 You can see in the `components` directory that regular UI components are mixed with page specific components like `LoginForm`. Depending on how strict you are with what classifies as a container, you could combine the presentational components `LoginForm` and `RegisterForm` into their respective containers. On the topic of containers, while I'm not against separating presentational components from their smarter siblings, I don't think you need to explicitly separate them into files under different directories.
@@ -46,12 +44,11 @@ components/
     ...
 constants/
 reducers/
-
 ```
 
 ## Containers and presentational components are just components
 
-In React Redux apps, there's a common idea of separating container and presentational components. I think it's an important conecpt to know, but I'm not convinced that you need to strictly separate these components into containers or components. They are all just components that are used and combined to render other React components. 
+In React Redux apps, there's a common idea of separating container and presentational components. I think it's an important conecpt to know, but I'm not convinced that you need to strictly separate these components into containers or components. They are all just components that are used and combined to render other React components.
 
 If you find yourself creating containers like this, you should really consider why you're creating them at all. Don't just create a container for the sake of it. If it's unikely that you'll need another container that uses the LoginForm component, you could combine them like this:
 
@@ -70,7 +67,6 @@ export default connect(
     mapStateToProps
     mapDispatchToProps
 )(LoginForm);
-
 ```
 
 Now the LoginForm directory looks like this
@@ -113,7 +109,7 @@ components/
         RegisterForm/
 ```
 
-Multi-page apps will commonly have a components for each page/route. 
+Multi-page apps commonly have a component for each page/route.
 
 ```
 components/
@@ -136,13 +132,26 @@ components/
 
 In practice, even though sharing and reusing components is great, often there are small differences that add up to complicating a simple component that is trying to be ultra customisable. There's a balance here. Only reuse or customise a component if it really is the same. Don't complicate things when it might be simpler and more maintainable to create a new component altogether. You might be able to extract some lower level components and reuse them instead. This helps avoid situations like this
 
-`<Avatar src={imgSrc} large noPadding disableHover profilePage showShadow />`
+`<Avatar src={imgSrc} large noPadding disableHover profile showShadow />`
 
+## Pages
 
-
-## Routes
+```
+src/
+    components/
+    pages/
+        ProfilePage/
+        DashboardPage/
+```
 
 ## Micro apps
+
+```
+src/
+    App/
+    Dashboard/
+    
+```
 
 
 
