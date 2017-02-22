@@ -22,13 +22,11 @@ components/
     Link,
     LoginForm/
     RegisterForm/
-    ...
 constants/
 containers/
     EventAlertContainer/
     LoginFormContainer/
     RegisterFormContainer/
-    ...
 reducers/
 ```
 
@@ -37,20 +35,18 @@ You can see in the `components` directory that regular UI components are mixed w
 ```
 actions/
 components/
-    ...
     LoginForm/
         LoginForm.js
         LoginFormContainer.js
-    ...
 constants/
 reducers/
 ```
 
 ## Containers and presentational components are just components
 
-In React Redux apps, there's a common idea of separating container and presentational components. I think it's an important conecpt to know, but I'm not convinced that you need to strictly separate these components into containers or components. They are all just components that are used and combined to render other React components.
+In React Redux apps, there's a common idea of separating container and presentational components. I think it's an important conecpt to know, but I'm not convinced that you need to strictly separate these components every time. They are all just components that are used and combined to render other React components.
 
-If you find yourself creating containers like this, you should really consider why you're creating them at all. Don't just create a container for the sake of it. If it's unikely that you'll need another container that uses the LoginForm component, you could combine them like this:
+If you find yourself creating containers like this, you should really consider why you're creating them at all. Don't just create a container for the sake of it. If it's unikely that you'll need another container that uses the LoginForm component, you could combine them like this instead:
 
 ```
 //LoginForm.js
@@ -74,7 +70,6 @@ Now the LoginForm directory looks like this
 ```
 ...
 components/
-    ...
     LoginForm/
         LoginForm.js
     ...
@@ -86,18 +81,15 @@ To differentiate between container and presentational components, you can use a 
 Even if you have a container component that simply connects a presentational component with state and actions, you can still keep it under the `components` directory
 
 ```
-...
 components/
-    ...
     Link/
     FilterLink/
         FilterLink.container.js
 ```
 
-This is better but our common UI components are still mixed with our app components and this will become messy. An obvious solutions is to group the components by feature.
+This is better, but our common UI components are still mixed with our app components and this will become messy. An obvious solutions is to group the components by feature.
 
 ```
-...
 components/
     ui/
         Button/
@@ -109,7 +101,7 @@ components/
         RegisterForm/
 ```
 
-Multi-page apps commonly have a component for each page/route.
+Multi-page apps normally have a component for each page/route.
 
 ```
 components/
@@ -130,19 +122,13 @@ components/
                 Avatar.js
 ```
 
-In practice, even though sharing and reusing components is great, often there are small differences that add up to complicating a simple component that is trying to be ultra customisable. There's a balance here. Only reuse or customise a component if it really is the same. Don't complicate things when it might be simpler and more maintainable to create a new component altogether. You might be able to extract some lower level components and reuse them instead. This helps avoid situations like this
+In practice, even though sharing and reusing components is great, often there are small differences that add a lot of complexity to simple components that try to be ultra customisable. There's a balance here. Only reuse or customise a component if it really is the same. Don't complicate things when it might be simpler and more maintainable to create a new component altogether. You might be able to extract some lower level components and reuse them instead. This helps avoid situations like this
 
-`<Avatar src={imgSrc} large noPadding disableHover profile showShadow />`
+`<Avatar src={imgSrc} large noPadding disableHover profilePage showShadow />`
 
-## Pages
+## Map file structure to the route hierarchy
 
-```
-src/
-    components/
-    pages/
-        ProfilePage/
-        DashboardPage/
-```
+You can read more about this [https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346](https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346 "here")
 
 ## Micro apps
 
@@ -150,7 +136,6 @@ src/
 src/
     App/
     Dashboard/
-    
 ```
 
 
