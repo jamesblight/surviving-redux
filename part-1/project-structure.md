@@ -1,4 +1,8 @@
+## Introduction
+
 Before we delve into the world of Redux, I'd like to briefly cover how the structure of your application can cause issues when your app grows. I'm talking about file structure here and some things to watch out for in your own projects. Be aware that the best structure is highly dependant on the project. If you have something that works and you're happy with, stick with it. You can treat the following section as my opinion, and it's subject to change!
+
+## Basic structure
 
 The official Redux examples use a structure similar to this
 
@@ -10,7 +14,7 @@ containers/
 reducers/
 ```
 
-This is great for small examples and applications. The problem is, if you continue to build your application like this, you might find that it becomes unmaintainable as youl have to sift through an increasingly large number of components, containers, actions and reducers.
+This is great for small examples and applications. The problem is, if you continue to build your application like this, you might find that it becomes unmaintainable as you'll have to sift through an increasingly large number of components, containers, actions and reducers.
 
 ```
 actions/
@@ -130,12 +134,37 @@ In practice, even though sharing and reusing components is great, often there ar
 
 You can read more about this [https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346](https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346 "here")
 
-## Micro apps
+## Feature first file structure
 
 ```
 src/
     App/
     Dashboard/
+```
+
+## Separate State and UI
+
+Most UI state is so simple that using Redux is overkill. Just use React state. Only use Redux for complex UI where you need more control.
+
+```
+src/
+    state/
+        reducers.js -- Roll up all state reducers
+        sagas.js -- Roll up all sagas
+        authentication/
+            actions.js
+            reducers.js
+            sagas.js
+        admin/
+    App/
+        App.js -- Entry point
+        screens/
+            Login/
+                
+            Register/
+            
+        Admin/
+        SubApp/
 ```
 
 
